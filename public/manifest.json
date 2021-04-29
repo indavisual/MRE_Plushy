@@ -1,7 +1,7 @@
 {
-	"name": "Puzzle Pieces",
+	"name": "Plushy",
 	"author": "Jeremy Roland",
 	"license": "MIT",
-	"repositoryUrl": "https://github.com/indavisual/mre-repo.git",
+	"repositoryUrl": "https://github.com/indavisual/MRE_Plushy.git",
 	"optionalPermissions": ["user-interaction"]
 }

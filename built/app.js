@@ -79,11 +79,11 @@ class PuzzlePieces {
         });
         // Once the animation data is created, we can create a real animation from it.
         spinAnimData.bind(
-        // We assign our text actor to the actor placeholder "text"
+        // We assign our text actor to the actor placeholder "tl"
         { tl: this.tl }, 
-        // And set it to play immediately, and bounce back and forth from start to end
+        // And set it to play immediately, and loop the animation
         { isPlaying: true, wrapMode: MRE.AnimationWrapMode.Loop });
-        // Create some animations on the cube.
+        // Create some animations on the puzzle piece.
         const flipAnimData = this.assets.createAnimationData(
         // the animation name
         "DoAFlip", { tracks: [{

@@ -750,7 +750,7 @@
         "signature": "bd30f27645e63b7ecfdba60baf818057d5a32bd341ab433985a98d95b1b492af"
       },
       "./src/app.ts": {
-        "version": "ab461d39a94f8affd44bbf119e4b1e3c8e33da8913fffff3de2724e038aab125",
+        "version": "f1997ba16b8cab9722eebb92700e15229f57190840adc575c200c123ff425f38",
         "signature": "001a07ff76037f152dbc994c429fb11db4623e59ba561f5f0d51e5957ed0ef58"
       },
       "./node_modules/@types/dotenv/index.d.ts": {
