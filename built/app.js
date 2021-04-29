@@ -103,14 +103,14 @@ class PuzzlePieces {
         buttonBehavior.onHover('enter', () => {
             // use the convenience function "AnimateTo" instead of creating the animation data in advance
             MRE.Animation.AnimateTo(this.context, this.tl, {
-                destination: { transform: { local: { scale: { x: 0.5, y: 0.5, z: 0.5 } } } },
+                destination: { transform: { local: { scale: { x: 1.5, y: 1.5, z: 1.5 } } } },
                 duration: 0.3,
                 easing: MRE.AnimationEaseCurves.EaseOutSine
             });
         });
         buttonBehavior.onHover('exit', () => {
             MRE.Animation.AnimateTo(this.context, this.tl, {
-                destination: { transform: { local: { scale: { x: 0.4, y: 0.4, z: 0.4 } } } },
+                destination: { transform: { local: { scale: { x: 1, y: 1, z: 1 } } } },
                 duration: 0.3,
                 easing: MRE.AnimationEaseCurves.EaseOutSine
             });
