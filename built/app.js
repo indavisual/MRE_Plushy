@@ -33,7 +33,7 @@ class PuzzlePieces {
             actor: {
                 name: 'Text',
                 transform: {
-                    app: { position: { x: 0, y: 4, z: 0 } }
+                    app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
                     contents: "Plushy Test",
@@ -54,7 +54,7 @@ class PuzzlePieces {
                 parentId: this.text.id,
                 transform: {
                     local: {
-                        position: { x: 0, y: 0, z: 0 },
+                        position: { x: 0, y: -1, z: 0 },
                         scale: { x: 0.001, y: 0.001, z: 0.001 }
                     }
                 }
