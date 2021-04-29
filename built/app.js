@@ -54,8 +54,8 @@ class PuzzlePieces {
                 parentId: this.text.id,
                 transform: {
                     local: {
-                        position: { x: 0, y: -1, z: 0 },
-                        scale: { x: 0.04, y: 0.04, z: 0.04 }
+                        position: { x: 0, y: 0, z: 0 },
+                        scale: { x: 0.004, y: 0.004, z: 0.004 }
                     }
                 }
             }
