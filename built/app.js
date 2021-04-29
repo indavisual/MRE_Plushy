@@ -55,7 +55,7 @@ class PuzzlePieces {
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
-                        scale: { x: 0.4, y: 0.4, z: 0.4 }
+                        scale: { x: 0.04, y: 0.04, z: 0.04 }
                     }
                 }
             }
