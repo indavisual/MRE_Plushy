@@ -33,7 +33,7 @@ class PuzzlePieces {
             actor: {
                 name: 'Text',
                 transform: {
-                    app: { position: { x: 0, y: 0.5, z: 0 } }
+                    app: { position: { x: 0, y: 4, z: 0 } }
                 },
                 text: {
                     contents: "Plushy Test",
