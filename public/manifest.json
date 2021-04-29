@@ -1,0 +1,7 @@
+{
+	"name": "Puzzle Pieces",
+	"author": "Jeremy Roland",
+	"license": "MIT",
+	"repositoryUrl": "https://github.com/indavisual/mre-repo.git",
+	"optionalPermissions": ["user-interaction"]
+}
