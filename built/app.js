@@ -36,7 +36,7 @@ class PuzzlePieces {
                     app: { position: { x: 0, y: 0.5, z: 0 } }
                 },
                 text: {
-                    contents: "Puzzle Piece Placeholder",
+                    contents: "Plushy Test",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -44,7 +44,7 @@ class PuzzlePieces {
             }
         });
         // Load our puzzle piece
-        const tlData = await this.assets.loadGltf('TL.glb', "mesh");
+        const tlData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
         // spawn a copy of the puzzle piece
         this.tl = MRE.Actor.CreateFromPrefab(this.context, {
             firstPrefabFrom: tlData,
