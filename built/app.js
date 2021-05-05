@@ -15,7 +15,7 @@ const MRE = __importStar(require("@microsoft/mixed-reality-extension-sdk"));
 /**
  * The main class of this app. All the logic goes here.
  */
-class PuzzlePieces {
+class Plushy {
     constructor(context) {
         this.context = context;
         this.text = null;
@@ -36,7 +36,7 @@ class PuzzlePieces {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test",
+                    contents: "Plushy Test v0.1",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -144,5 +144,5 @@ class PuzzlePieces {
             }];
     }
 }
-exports.default = PuzzlePieces;
+exports.default = Plushy;
 //# sourceMappingURL=app.js.map
