@@ -68,7 +68,7 @@ class Plushy {
             addCollider : true
         });
 
-        this.floor = MRE.Actor.CreatePrimitive(this.context, {
+        this.floor = MRE.Actor.CreatePrimitive(this.assets, {
             definition : {                
                 shape: MRE.PrimitiveShape.Box,
 				dimensions: { x: 1, y: 1, z: 1 } 
