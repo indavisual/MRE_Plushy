@@ -54,7 +54,9 @@ class Plushy {
                 name: 'teddy',
                 parentId: this.text.id,
                 grabbable : true,
-                //rigidbody : true,
+                rigidbody : true,
+                detectCollisions : true,
+                useGravity : true,
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
@@ -74,7 +76,11 @@ class Plushy {
             actor: {
                 name: 'floor',
                 parentId: this.text.id,
-                collisionLayer: (this.context, MRE.CollisionLayer.Box),                             
+                collisionLayer: (this.context, MRE.CollisionLayer.Box),    
+                rigidBody = true,
+                useGravity : false,
+                detectCollisions : true,
+                isKinetmatic : true,                     
                 transform: {
                     local: {
                         position: { x: 0, y: -2, z: 0 }
