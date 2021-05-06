@@ -65,23 +65,22 @@ class Plushy {
             }
         });
 
-        this.floor = MRE.Actor.CreatePrimitive(this.context, {
+        this.floor = MRE.Actor.CreatePrimitive(this.assets, {
             definition : {                
                 shape: MRE.PrimitiveShape.Box,
-				dimensions: { x: 0.1, y: 0.1, z: 0.1 } 
+				dimensions: { x: 1, y: 1, z: 1 } 
             },
             actor: {
                 name: 'floor',
                 parentId: this.text.id,
-                collisionLayer: (this.context, MRE.CollisionLayer.Default),   
-                          
+                collisionLayer: (this.context, MRE.CollisionLayer.Default),                             
                 transform: {
                     local: {
                         position: { x: 0, y: -2, z: 0 }
                     }
                 }  
             },
-            addCollider : true
+            //addCollider : true
         });
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
