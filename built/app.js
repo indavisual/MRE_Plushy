@@ -56,7 +56,7 @@ class Plushy {
                 grabbable : true,
                 rigidbody : true,
                 detectCollisions : true,
-                useGravity : true,
+                useGravity : false,
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
