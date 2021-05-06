@@ -54,9 +54,9 @@ class Plushy {
                 name: 'teddy',
                 parentId: this.text.id,
                 grabbable : true,
-                rigidbody : true,
+                //rigidbody : true,
                 detectCollisions : true,
-                useGravity : false,
+                useGravity : true,
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
