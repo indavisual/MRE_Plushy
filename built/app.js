@@ -73,14 +73,14 @@ class Plushy {
             actor: {
                 name: 'floor',
                 parentId: this.text.id,
-                collisionLayer: (this.context, MRE.CollisionLayer.Default),                             
+                collisionLayer: (this.context, MRE.CollisionLayer.Box),                             
                 transform: {
                     local: {
                         position: { x: 0, y: -2, z: 0 }
                     }
                 }  
             },
-            //addCollider : true
+            addCollider : true
         });
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
