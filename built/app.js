@@ -53,6 +53,7 @@ class Plushy {
                 name: 'TL',
                 parentId: this.text.id,
                 grabbable : true,
+                rigidbody : true,
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
