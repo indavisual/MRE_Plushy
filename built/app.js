@@ -26,6 +26,15 @@ class Plushy {
     /**
      * Once the context is "started", initialize the app.
      */
+teddyGrab(){
+    this.teddy.rigidbody.isKinematic = true;
+    this.teddy.rigidbody.useGravity = false;
+}
+teddyRel(){
+    this.teddy.rigidbody.isKinematic = false;
+    this.teddy.rigidbody.useGravity = true;
+}
+
     async started() {
         // set up somewhere to store loaded assets (meshes, textures, animations, gltfs, etc.)
         this.assets = new MRE.AssetContainer(this.context);
@@ -58,7 +67,7 @@ class Plushy {
                 rigidbody : {
                     enabled : true,
                     useGravity : true,
-                    mass : 0.1,
+                    mass : 0.45,
                     detectCollisions : true,
                 },
                 transform: {
@@ -67,7 +76,8 @@ class Plushy {
                         rotation: { x:0, y:180, z:0},
                         scale: { x: 1, y: 1, z: 1 }
                     }
-                }                
+                }  
+                              
             },
             addCollider : true
         });
@@ -93,6 +103,9 @@ class Plushy {
             },
             addCollider : true
         });
+
+        this.teddy.onGrab("begin", teddyGrab);
+        this.teddy.onGrab("end", teddyRel);
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
 /*
@@ -160,7 +173,7 @@ class Plushy {
 */
         //Adding grab behaviour
         //const grabBehaviour = this.tl.setBehaviour(MRE.grabBehaviour);
-        
+     
     }
     
     /**
