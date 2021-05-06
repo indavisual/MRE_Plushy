@@ -43,26 +43,27 @@ class Plushy {
                 }
             }
         });
-        // Load our puzzle piece
+        // Load our plushy
         const tlData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
-        // spawn a copy of the puzzle piece
+        // spawn a copy of the plushy
         this.tl = MRE.Actor.CreateFromPrefab(this.context, {
             firstPrefabFrom: tlData,
-            collisionLayer: (this.context, MRE.CollisionLayer.Default),
+            collisionLayer: (this.context, MRE.CollisionLayer.Default),            
             actor: {
                 name: 'TL',
                 parentId: this.text.id,
+                grabbable : true,
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
                         scale: { x: 1, y: 1, z: 1 }
                     }
-                }
+                }                
             }
         });
-        // Here we create an animation for our puzzle piece. First we create animation data, which can be used on any
+        // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
-        const spinAnimData = this.assets.createAnimationData(
+        /*const spinAnimData = this.assets.createAnimationData(
         // The name is a unique identifier for this data. You can use it to find the data in the asset container,
         // but it's merely descriptive in this sample.
         "Spin", {
@@ -82,7 +83,7 @@ class Plushy {
         // We assign our text actor to the actor placeholder "tl"
         { tl: this.tl }, 
         // And set it to play immediately, and loop the animation
-        { isPlaying: true, wrapMode: MRE.AnimationWrapMode.Loop });
+        { isPlaying: true, wrapMode: MRE.AnimationWrapMode.Loop });*/
         // Create some animations on the puzzle piece.
         const flipAnimData = this.assets.createAnimationData(
         // the animation name
@@ -96,7 +97,9 @@ class Plushy {
                 }] });
         // apply the animation to our cube
         const flipAnim = await flipAnimData.bind({ target: this.tl });
-        // Set up cursor interaction. We add the input behavior ButtonBehavior to the cube.
+
+/*
+        // Set up cursor interaction. We add the input behavior ButtonBehavior to the plushy.
         // Button behaviors have two pairs of events: hover start/stop, and click start/stop.
         const buttonBehavior = this.tl.setBehavior(MRE.ButtonBehavior);
         // Trigger the grow/shrink animations on hover.
@@ -119,6 +122,9 @@ class Plushy {
         buttonBehavior.onClick(_ => {
             flipAnim.play();
         });
+*/
+        //Adding grab behaviour
+        const grabBehaviour = this.tl.setBehaviour(MRE.grabBehaviour);
     }
     /**
      * Generate keyframe data for a simple spin animation.
