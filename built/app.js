@@ -20,19 +20,16 @@ class Plushy {
         this.context = context;
         this.text = null;
         this.teddy = null;
-        this.floor = null;
         this.context.onStarted(() => this.started());
     }
     /**
      * Once the context is "started", initialize the app.
      */
 teddyGrab(){
-    this.teddy.rigidbody.isKinematic = true;
-    this.teddy.rigidbody.useGravity = false;
+    this.teddy.rigidbody.rigidbody = false;
 }
 teddyRel(){
-    this.teddy.rigidbody.isKinematic = false;
-    this.teddy.rigidbody.useGravity = true;
+    this.teddy.rigidbody.rigidbody = true;
 }
 
     async started() {
@@ -78,28 +75,6 @@ teddyRel(){
                     }
                 }  
                               
-            },
-            addCollider : true
-        });
-
-        this.floor = MRE.Actor.CreatePrimitive(this.assets, {
-            definition : {                
-                shape: MRE.PrimitiveShape.Box,
-				dimensions: { x: 1, y: 1, z: 1 } 
-            },
-            actor: {
-                name: 'floor',
-                parentId: this.text.id,
-                collisionLayer: (this.context, MRE.CollisionLayer.Box),    
-                //rigidBody = false,
-                //useGravity : false,
-                //detectCollisions : true,
-                //isKinetmatic : true,                     
-                transform: {
-                    local: {
-                        position: { x: 0, y: -2, z: 0 }
-                    }
-                }  
             },
             addCollider : true
         });
