@@ -77,7 +77,7 @@ class Plushy {
                 name: 'floor',
                 parentId: this.text.id,
                 collisionLayer: (this.context, MRE.CollisionLayer.Box),    
-                rigidBody = true,
+                rigidBody = false,
                 //useGravity : false,
                 detectCollisions : true,
                 isKinetmatic : true,                     
