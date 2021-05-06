@@ -80,7 +80,7 @@ class Plushy {
                 //rigidBody = true,
                 //useGravity : false,
                 detectCollisions : true,
-                //isKinetmatic : true,                     
+                isKinetmatic : true,                     
                 transform: {
                     local: {
                         position: { x: 0, y: -2, z: 0 }
