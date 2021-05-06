@@ -68,7 +68,7 @@ class Plushy {
             addCollider : true
         });
 
-        this.floor = MRE.Actor.CreatePrimitive(this.assets, {
+        this.floor = MRE.Actor.CreatePrimitive(this.context, {
             definition : {                
                 shape: MRE.PrimitiveShape.Box,
 				dimensions: { x: 1, y: 1, z: 1 } 
@@ -77,10 +77,10 @@ class Plushy {
                 name: 'floor',
                 parentId: this.text.id,
                 collisionLayer: (this.context, MRE.CollisionLayer.Box),    
-                rigidBody = false,
+                //rigidBody = false,
                 //useGravity : false,
                 detectCollisions : true,
-                isKinetmatic : true,                     
+                //isKinetmatic : true,                     
                 transform: {
                     local: {
                         position: { x: 0, y: -2, z: 0 }
