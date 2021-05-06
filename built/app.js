@@ -62,7 +62,8 @@ class Plushy {
                         scale: { x: 1, y: 1, z: 1 }
                     }
                 }                
-            }
+            },
+            addCollider : true
         });
 
         this.floor = MRE.Actor.CreatePrimitive(this.assets, {
