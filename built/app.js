@@ -56,6 +56,7 @@ class Plushy {
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
+                        rotation: { x:0, y:180, z:0},
                         scale: { x: 1, y: 1, z: 1 }
                     }
                 }                
@@ -63,7 +64,8 @@ class Plushy {
         });
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
-        /*const spinAnimData = this.assets.createAnimationData(
+/*
+        const spinAnimData = this.assets.createAnimationData(
         // The name is a unique identifier for this data. You can use it to find the data in the asset container,
         // but it's merely descriptive in this sample.
         "Spin", {
@@ -83,8 +85,10 @@ class Plushy {
         // We assign our text actor to the actor placeholder "tl"
         { tl: this.tl }, 
         // And set it to play immediately, and loop the animation
-        { isPlaying: true, wrapMode: MRE.AnimationWrapMode.Loop });*/
-        // Create some animations on the puzzle piece.
+        { isPlaying: true, wrapMode: MRE.AnimationWrapMode.Loop });
+*/
+/*
+        // Create some animations on the plushy.
         const flipAnimData = this.assets.createAnimationData(
         // the animation name
         "DoAFlip", { tracks: [{
@@ -95,9 +99,9 @@ class Plushy {
                     // and do it smoothly
                     easing: MRE.AnimationEaseCurves.Linear
                 }] });
-        // apply the animation to our cube
+        // apply the animation to our plushy
         const flipAnim = await flipAnimData.bind({ target: this.tl });
-
+*/
 /*
         // Set up cursor interaction. We add the input behavior ButtonBehavior to the plushy.
         // Button behaviors have two pairs of events: hover start/stop, and click start/stop.
@@ -125,12 +129,15 @@ class Plushy {
 */
         //Adding grab behaviour
         const grabBehaviour = this.tl.setBehaviour(MRE.grabBehaviour);
+        
     }
+    
     /**
      * Generate keyframe data for a simple spin animation.
      * @param duration The length of time in seconds it takes to complete a full revolution.
      * @param axis The axis of rotation in local space.
      */
+/*
     generateSpinKeyframes(duration, axis) {
         return [{
                 time: 0 * duration,
@@ -149,6 +156,7 @@ class Plushy {
                 value: MRE.Quaternion.RotationAxis(axis, 2 * Math.PI)
             }];
     }
+*/
 }
 exports.default = Plushy;
 //# sourceMappingURL=app.js.map
