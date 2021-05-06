@@ -159,7 +159,7 @@ class Plushy {
         });
 */
         //Adding grab behaviour
-        const grabBehaviour = this.tl.setBehaviour(MRE.grabBehaviour);
+        //const grabBehaviour = this.tl.setBehaviour(MRE.grabBehaviour);
         
     }
     
