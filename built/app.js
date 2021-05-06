@@ -49,14 +49,18 @@ class Plushy {
         // spawn a copy of the plushy
         this.teddy = MRE.Actor.CreateFromPrefab(this.context, {
             firstPrefabFrom: teddyData,
-            collisionLayer: (this.context, MRE.CollisionLayer.Default),            
+            collisionLayer: (this.context, MRE.CollisionLayer.Default), 
+  
             actor: {
                 name: 'teddy',
                 parentId: this.text.id,
                 grabbable : true,
-                //rigidbody : true,
-                detectCollisions : true,
-                useGravity : true,
+                rigidbody : {
+                    enabled : true,
+                    useGravity : true,
+                    mass : 0.1,
+                    detectCollisions : true,
+                },
                 transform: {
                     local: {
                         position: { x: 0, y: -1, z: 0 },
@@ -79,7 +83,7 @@ class Plushy {
                 collisionLayer: (this.context, MRE.CollisionLayer.Box),    
                 //rigidBody = false,
                 //useGravity : false,
-                detectCollisions : true,
+                //detectCollisions : true,
                 //isKinetmatic : true,                     
                 transform: {
                     local: {
