@@ -19,7 +19,8 @@ class Plushy {
     constructor(context) {
         this.context = context;
         this.text = null;
-        this.tl = null;
+        this.teddy = null;
+        this.floor = null;
         this.context.onStarted(() => this.started());
     }
     /**
@@ -36,7 +37,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.1",
+                    contents: "Plushy Test v0.2",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -44,13 +45,13 @@ class Plushy {
             }
         });
         // Load our plushy
-        const tlData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
+        const teddyData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
         // spawn a copy of the plushy
-        this.tl = MRE.Actor.CreateFromPrefab(this.context, {
-            firstPrefabFrom: tlData,
+        this.teddy = MRE.Actor.CreateFromPrefab(this.context, {
+            firstPrefabFrom: teddyData,
             collisionLayer: (this.context, MRE.CollisionLayer.Default),            
             actor: {
-                name: 'TL',
+                name: 'teddy',
                 parentId: this.text.id,
                 grabbable : true,
                 rigidbody : true,
@@ -62,6 +63,25 @@ class Plushy {
                     }
                 }                
             }
+        });
+
+        this.floor = MRE.Actor.CreatePrimitive(this.context, {
+            definition : {                
+                shape: MRE.PrimitiveShape.Box,
+				dimensions: { x: 0.1, y: 0.1, z: 0.1 } 
+            },
+            actor: {
+                name: 'floor',
+                parentId: this.text.id,
+                collisionLayer: (this.context, MRE.CollisionLayer.Default),   
+                          
+                transform: {
+                    local: {
+                        position: { x: 0, y: -2, z: 0 }
+                    }
+                }  
+            },
+            addCollider : true
         });
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
