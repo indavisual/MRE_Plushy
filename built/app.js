@@ -20,18 +20,19 @@ class Plushy {
         this.context = context;
         this.text = null;
         this.teddy = null;
+        this.plushy = null;
         this.context.onStarted(() => this.started());
+    }
+
+     teddyGrab(){
+        this.teddy.rigidbody.useGravity = false;
+    }
+    teddyRel(){
+        this.teddy.rigidbody.useGravity = true;
     }
     /**
      * Once the context is "started", initialize the app.
      */
-teddyGrab(){
-    this.teddy.rigidbody.useGravity = false;
-}
-teddyRel(){
-    this.teddy.rigidbody.useGravity = true;
-}
-
     async started() {
         // set up somewhere to store loaded assets (meshes, textures, animations, gltfs, etc.)
         this.assets = new MRE.AssetContainer(this.context);
@@ -43,7 +44,7 @@ teddyRel(){
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.2",
+                    contents: "Plushy Test v0.3",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -78,6 +79,31 @@ teddyRel(){
             },
             addCollider : true
         });
+
+        this.plushy.push(MRE.Actor.CreateFromLibrary(this.context,
+            {
+                resourceId: `artifact:${1732147800226923108}`,
+                actor: {
+                    name: 'plushy',
+                    parentId: this.text.id,
+                    grabbable : true,
+                    rigidbody : {
+                        enabled : true,
+                        useGravity : true,
+                        mass : 0.45,
+                        detectCollisions : true,
+                    },
+                    transform: {
+                        local: {
+                            position: { x: 2, y: -1, z: 0 },
+                            rotation: { x:0, y:0, z:0},
+                            scale: { x: 1, y: 1, z: 1 }
+                        }
+                    }  
+                },
+                addCollider : true
+            }
+        ));
 
         this.teddy.onGrab("begin", teddyGrab);
         this.teddy.onGrab("end", teddyRel);
@@ -176,6 +202,13 @@ teddyRel(){
             }];
     }
 */
+teddyGrab(){
+    this.teddy.rigidbody.useGravity = false;
 }
+teddyRel(){
+    this.teddy.rigidbody.useGravity = true;
+}
+}
+
 exports.default = Plushy;
 //# sourceMappingURL=app.js.map
