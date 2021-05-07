@@ -44,7 +44,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.3",
+                    contents: "Plushy Test v0.4",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -80,9 +80,10 @@ class Plushy {
             addCollider : true
         });
 
-        this.plushy.push(MRE.Actor.CreateFromLibrary(this.context,
+        this.plushy = (MRE.Actor.CreateFromLibrary(this.context,
             {
                 resourceId: `artifact:${'1732147800226923108'}`,
+                collisionLayer: (this.context, MRE.CollisionLayer.Default), 
                 actor: {
                     name: 'plushy',
                     parentId: this.text.id,
