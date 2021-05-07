@@ -87,13 +87,13 @@ class Plushy {
                 actor: {
                     name: 'plushy',
                     parentId: this.text.id,
-                    // grabbable : true,
-                    // rigidbody : {
-                    //     enabled : true,
-                    //     useGravity : true,
-                    //     mass : 0.45,
-                    //     detectCollisions : true,
-                    // },
+                    grabbable : true,
+                    rigidbody : {
+                        enabled : true,
+                        useGravity : true,
+                        mass : 0.45,
+                        detectCollisions : true,
+                    },
                     transform: {
                         local: {
                             position: { x: 0.5, y: -1, z: 0 },
