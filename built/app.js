@@ -26,10 +26,10 @@ class Plushy {
      * Once the context is "started", initialize the app.
      */
 teddyGrab(){
-    this.teddy.rigidbody.enabled = false;
+    this.teddy.rigidbody.useGravity = false;
 }
 teddyRel(){
-    this.teddy.rigidbody.enabled = true;
+    this.teddy.rigidbody.useGravity = true;
 }
 
     async started() {
