@@ -82,20 +82,20 @@ class Plushy {
 
         this.plushy.push(MRE.Actor.CreateFromLibrary(this.context,
             {
-                resourceId: `artifact:${1732147800226923108}`,
+                resourceId: `artifact:${'1732147800226923108'}`,
                 actor: {
                     name: 'plushy',
                     parentId: this.text.id,
-                    grabbable : true,
-                    rigidbody : {
-                        enabled : true,
-                        useGravity : true,
-                        mass : 0.45,
-                        detectCollisions : true,
-                    },
+                    // grabbable : true,
+                    // rigidbody : {
+                    //     enabled : true,
+                    //     useGravity : true,
+                    //     mass : 0.45,
+                    //     detectCollisions : true,
+                    // },
                     transform: {
                         local: {
-                            position: { x: 2, y: -1, z: 0 },
+                            position: { x: 0.5, y: -1, z: 0 },
                             rotation: { x:0, y:0, z:0},
                             scale: { x: 1, y: 1, z: 1 }
                         }
