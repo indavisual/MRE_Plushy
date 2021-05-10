@@ -25,10 +25,12 @@ class Plushy {
     }
 
     plushyGrab(){
-        this.plushy.rigidbody.isKinematic = false;
+        this.plushy.actor.rigidbody.isKinematic = false;
+        this.text.actor.text = "Grabbing";
     }
     plushyRel(){
-        this.plushy.rigidbody.isKinematic = true;
+        this.plushy.actor.rigidbody.isKinematic = true;
+        this.text.actor.text = "Not Grabbed";
     }
     /**
      * Once the context is "started", initialize the app.
@@ -44,7 +46,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.4",
+                    contents: "Plushy Test v0.5",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
