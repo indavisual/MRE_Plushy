@@ -24,11 +24,11 @@ class Plushy {
         this.context.onStarted(() => this.started());
     }
 
-     teddyGrab(){
-        this.teddy.rigidbody.useGravity = false;
+    plushyGrab(){
+        this.plushy.rigidbody.isKinematic = false;
     }
-    teddyRel(){
-        this.teddy.rigidbody.useGravity = true;
+    plushyRel(){
+        this.plushy.rigidbody.isKinematic = true;
     }
     /**
      * Once the context is "started", initialize the app.
@@ -52,33 +52,33 @@ class Plushy {
             }
         });
         // Load our plushy
-        const teddyData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
-        // spawn a copy of the plushy
-        this.teddy = MRE.Actor.CreateFromPrefab(this.context, {
-            firstPrefabFrom: teddyData,
-            collisionLayer: (this.context, MRE.CollisionLayer.Default), 
+        // const teddyData = await this.assets.loadGltf('TeddyUpdate.glb', "mesh");
+        // // spawn a copy of the plushy
+        // this.teddy = MRE.Actor.CreateFromPrefab(this.context, {
+        //     firstPrefabFrom: teddyData,
+        //     collisionLayer: (this.context, MRE.CollisionLayer.Default), 
   
-            actor: {
-                name: 'teddy',
-                parentId: this.text.id,
-                grabbable : true,
-                rigidbody : {
-                    enabled : true,
-                    useGravity : true,
-                    mass : 0.45,
-                    detectCollisions : true,
-                },
-                transform: {
-                    local: {
-                        position: { x: 0, y: -1, z: 0 },
-                        rotation: { x:0, y:180, z:0},
-                        scale: { x: 1, y: 1, z: 1 }
-                    }
-                }  
+        //     actor: {
+        //         name: 'teddy',
+        //         parentId: this.text.id,
+        //         grabbable : true,
+        //         rigidbody : {
+        //             enabled : true,
+        //             useGravity : true,
+        //             mass : 0.45,
+        //             detectCollisions : true,
+        //         },
+        //         transform: {
+        //             local: {
+        //                 position: { x: 0, y: -1, z: 0 },
+        //                 rotation: { x:0, y:180, z:0},
+        //                 scale: { x: 1, y: 1, z: 1 }
+        //             }
+        //         }  
                               
-            },
-            addCollider : true
-        });
+        //     },
+        //     addCollider : true
+        // });
 
         this.plushy = (MRE.Actor.CreateFromLibrary(this.context,
             {
@@ -106,8 +106,8 @@ class Plushy {
             }
         ));
 
-        this.teddy.onGrab("begin", teddyGrab);
-        this.teddy.onGrab("end", teddyRel);
+        this.plushy.onGrab("begin", plushyGrab);
+        this.plushy.onGrab("end", plushyRel);
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
 /*
