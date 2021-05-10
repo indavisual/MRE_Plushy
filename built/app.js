@@ -93,7 +93,7 @@ class Plushy {
                     rigidbody : {
                         enabled : true,
                         useGravity : true,
-                        mass : 0.45,
+                        mass : 0.1,
                         detectCollisions : true,
                     },
                     transform: {
@@ -108,8 +108,8 @@ class Plushy {
             }
         ));
 
-        this.plushy.onGrab("begin", plushyGrab);
-        this.plushy.onGrab("end", plushyRel);
+        this.plushy.onGrab("begin", plushyGrab());
+        this.plushy.onGrab("end", plushyRel());
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
 /*
