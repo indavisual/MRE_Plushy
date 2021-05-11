@@ -92,7 +92,7 @@ class Plushy {
                     grabbable : true,
                     rigidbody : {
                         enabled : true,
-                        useGravity : true,
+                        useGravity : false,
                         mass : 1,
                         detectCollisions : true,
                     },
