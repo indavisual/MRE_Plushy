@@ -25,11 +25,11 @@ class Plushy {
     }
 
     plushyGrab(){
-        this.plushy.actor.rigidbody.isKinematic = false;
+        this.plushy.actor.rigidbody.isKinematic = true;
         this.text.actor.text = "Grabbing";
     }
     plushyRel(){
-        this.plushy.actor.rigidbody.isKinematic = true;
+        this.plushy.actor.rigidbody.isKinematic = false;
         this.text.actor.text = "Not Grabbed";
     }
     /**
@@ -46,7 +46,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.5",
+                    contents: "Plushy Test v0.7",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -93,7 +93,7 @@ class Plushy {
                     rigidbody : {
                         enabled : true,
                         useGravity : true,
-                        mass : 0,
+                        mass : 1,
                         detectCollisions : true,
                     },
                     transform: {
@@ -108,8 +108,8 @@ class Plushy {
             }
         ));
 
-        this.plushy.onGrab("begin", plushyGrab());
-        this.plushy.onGrab("end", plushyRel());
+        this.plushy.onGrab("begin", (actor) => this.plushyGrab());
+        this.plushy.onGrab("end", (actor) => this.plushyRel());
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
 /*
