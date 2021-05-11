@@ -93,7 +93,7 @@ class Plushy {
                     rigidbody : {
                         enabled : true,
                         useGravity : true,
-                        mass : 0.1,
+                        mass : 0,
                         detectCollisions : true,
                     },
                     transform: {
