@@ -46,7 +46,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.9",
+                    contents: "Plushy Test v0.51",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -107,7 +107,7 @@ class Plushy {
                 addCollider : true
             }
         ));
-
+        await this.plushy.actor.created()
         this.plushy.actor.onGrab("begin", (actor) => this.plushyGrab());
         this.plushy.actor.onGrab("end", (actor) => this.plushyRel());
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
@@ -205,12 +205,6 @@ class Plushy {
             }];
     }
 */
-teddyGrab(){
-    this.teddy.rigidbody.useGravity = false;
-}
-teddyRel(){
-    this.teddy.rigidbody.useGravity = true;
-}
 }
 
 exports.default = Plushy;
