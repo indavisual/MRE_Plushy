@@ -46,7 +46,7 @@ class Plushy {
                     app: { position: { x: 0, y: 1, z: 0 } }
                 },
                 text: {
-                    contents: "Plushy Test v0.8",
+                    contents: "Plushy Test v0.9",
                     anchor: MRE.TextAnchorLocation.MiddleCenter,
                     color: { r: 30 / 255, g: 206 / 255, b: 213 / 255 },
                     height: 0.3
@@ -92,7 +92,7 @@ class Plushy {
                     grabbable : true,
                     rigidbody : {
                         enabled : true,
-                        useGravity : false,
+                        useGravity : true,
                         mass : 1,
                         detectCollisions : true,
                     },
