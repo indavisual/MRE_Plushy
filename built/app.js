@@ -108,8 +108,8 @@ class Plushy {
             }
         ));
 
-        this.plushy.onGrab("begin", (actor) => this.plushyGrab());
-        this.plushy.onGrab("end", (actor) => this.plushyRel());
+        this.plushy.actor.onGrab("begin", (actor) => this.plushyGrab());
+        this.plushy.actor.onGrab("end", (actor) => this.plushyRel());
         // Here we create an animation for our plushy. First we create animation data, which can be used on any
         // actor. We'll reference that actor with the placeholder "text".
 /*
